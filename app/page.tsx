@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import LogoutButton from "../components/LogoutButton";
+import LogoutButton from "@/components/LogoutButton";
 import NavBar from "@/containers/NavBar";
 
 import supabase from "./utils/supabase";
@@ -26,6 +26,12 @@ export default async function Index() {
             <div className="flex items-center gap-4">
               Hey, {user.email}!
               <LogoutButton />
+              <Link
+                href="/update-password"
+                className="py-3 px-10 no-underline bg-green-500 hover:bg-green-700 text-black text-center text-sm font-bold w-28"
+              >
+                Reset Password
+              </Link>
             </div>
           ) : (
             <Link
